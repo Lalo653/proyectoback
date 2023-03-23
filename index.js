@@ -2,8 +2,8 @@ const express = require('express')
 const bcrypt = require('bcrypt')
 const cors = require('cors')
 require('dotenv/config')
-const { initializeApp } = require("firebase/app");
-const { collection, getDoc ,getFirestore, setDoc,doc, updateDoc } = require( "firebase/firestore")
+const { initializeApp } = require('firebase/app');
+const { collection, getDoc ,getFirestore, setDoc,doc, getDocs, updateDoc } = require( 'firebase/firestore')
 
 //Configuracion de claves firebase
 const firebaseConfig = {
@@ -14,6 +14,8 @@ const firebaseConfig = {
     messagingSenderId: "973529512628",
     appId: "1:973529512628:web:0c4100f4f6c94306a6b5e1"
   };
+
+  //inicializar BD
 
 const firebase = initializeApp(firebaseConfig);
 const db = getFirestore()
@@ -154,7 +156,7 @@ app.post('/delete', (req, res) => {
 
     const {email} = req.body // se obtiene el email desde el body
 
-    const contactoBorrar = doc(db, 'contactos', emil) //va a la coleccion y busca la variable con ese valor y se guarda la variable
+    const contactoBorrar = doc(db, 'contactos', email) //va a la coleccion y busca la variable con ese valor y se guarda la variable
 
     //console.log(contactoBorrar)
 
