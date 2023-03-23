@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 const cors = require('cors')
 require('dotenv/config')
 const { initializeApp } = require('firebase/app');
-const { collection, getDoc ,getFirestore, setDoc,doc, getDocs, updateDoc } = require( 'firebase/firestore')
+const { collection, getDoc ,getFirestore, setDoc,doc, getDocs, updateDoc, deleteDoc } = require( 'firebase/firestore')
 
 //Configuracion de claves firebase
 const firebaseConfig = {
